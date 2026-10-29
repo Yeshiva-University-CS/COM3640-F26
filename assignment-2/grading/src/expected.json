@@ -1,0 +1,498 @@
+{
+  "01-original": {
+    "columns": [
+      "person_id",
+      "full_name",
+      "full_name_1",
+      "2024_total"
+    ],
+    "rows": [
+      [
+        1,
+        "Ada",
+        "A",
+        12
+      ],
+      [
+        2,
+        "Ben",
+        "B",
+        20
+      ],
+      [
+        3,
+        "Cy",
+        "C",
+        8
+      ],
+      [
+        3,
+        "Cy",
+        "C",
+        8
+      ]
+    ]
+  },
+  "01-subset": {
+    "columns": [
+      "2024_total",
+      "full_name"
+    ],
+    "rows": [
+      [
+        12,
+        "Ada"
+      ],
+      [
+        20,
+        "Ben"
+      ],
+      [
+        8,
+        "Cy"
+      ],
+      [
+        8,
+        "Cy"
+      ]
+    ]
+  },
+  "01-headerless": {
+    "columns": [
+      "col_a",
+      "col_b"
+    ],
+    "rows": [
+      [
+        10,
+        100
+      ],
+      [
+        20,
+        200
+      ],
+      [
+        30,
+        300
+      ]
+    ]
+  },
+  "02-json": {
+    "columns": [
+      "account_id",
+      "balance",
+      "status"
+    ],
+    "rows": [
+      [
+        1,
+        10.5,
+        "open"
+      ],
+      [
+        2,
+        null,
+        "closed"
+      ],
+      [
+        3,
+        -2.5,
+        "open"
+      ]
+    ]
+  },
+  "02-temporary": {
+    "columns": [
+      "id",
+      "amount",
+      "note"
+    ],
+    "rows": [
+      [
+        2,
+        "020",
+        "second"
+      ],
+      [
+        3,
+        "100",
+        "third"
+      ]
+    ]
+  },
+  "02-mapped": {
+    "columns": [
+      "id",
+      "quantity",
+      "note"
+    ],
+    "rows": [
+      [
+        1,
+        6,
+        "first"
+      ],
+      [
+        2,
+        20,
+        "second"
+      ],
+      [
+        3,
+        100,
+        "third"
+      ]
+    ]
+  },
+  "04-equal": {
+    "columns": [
+      "id",
+      "value",
+      "label"
+    ],
+    "rows": [
+      [
+        8,
+        10,
+        "middle"
+      ],
+      [
+        9,
+        10,
+        "middle"
+      ]
+    ]
+  },
+  "04-range": {
+    "columns": [
+      "id",
+      "value",
+      "label"
+    ],
+    "rows": [
+      [
+        3,
+        -5,
+        "negative"
+      ],
+      [
+        4,
+        -1,
+        "negative"
+      ],
+      [
+        5,
+        0,
+        "zero"
+      ],
+      [
+        6,
+        2,
+        "low"
+      ],
+      [
+        7,
+        5,
+        "low"
+      ],
+      [
+        8,
+        10,
+        "middle"
+      ],
+      [
+        9,
+        10,
+        "middle"
+      ],
+      [
+        10,
+        15,
+        "middle"
+      ],
+      [
+        11,
+        20,
+        "middle"
+      ]
+    ]
+  },
+  "04-outside": {
+    "columns": [
+      "id",
+      "value",
+      "label"
+    ],
+    "rows": [
+      [
+        1,
+        -20,
+        "negative"
+      ],
+      [
+        2,
+        -10,
+        "negative"
+      ],
+      [
+        3,
+        -5,
+        "negative"
+      ],
+      [
+        4,
+        -1,
+        "negative"
+      ],
+      [
+        14,
+        40,
+        "high"
+      ],
+      [
+        16,
+        75,
+        "high"
+      ],
+      [
+        17,
+        100,
+        "high"
+      ]
+    ]
+  },
+  "04-membership": {
+    "columns": [
+      "id",
+      "value",
+      "label"
+    ],
+    "rows": [
+      [
+        2,
+        -10,
+        "negative"
+      ],
+      [
+        5,
+        0,
+        "zero"
+      ],
+      [
+        12,
+        25,
+        "high"
+      ],
+      [
+        16,
+        75,
+        "high"
+      ]
+    ]
+  },
+  "04-default": {
+    "columns": [
+      "id",
+      "a",
+      "b",
+      "c"
+    ],
+    "rows": [
+      [
+        3,
+        0,
+        1,
+        0
+      ],
+      [
+        5,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        1,
+        0,
+        1
+      ],
+      [
+        7,
+        1,
+        1,
+        0
+      ],
+      [
+        8,
+        1,
+        1,
+        1
+      ]
+    ]
+  },
+  "04-grouped": {
+    "columns": [
+      "id",
+      "a",
+      "b",
+      "c"
+    ],
+    "rows": [
+      [
+        3,
+        0,
+        1,
+        0
+      ],
+      [
+        5,
+        1,
+        0,
+        0
+      ],
+      [
+        7,
+        1,
+        1,
+        0
+      ]
+    ]
+  },
+  "05-category": {
+    "columns": [
+      "region",
+      "category",
+      "total"
+    ],
+    "rows": [
+      [
+        "north",
+        "a",
+        30
+      ],
+      [
+        "north",
+        "b",
+        null
+      ],
+      [
+        "south",
+        "a",
+        5
+      ],
+      [
+        "south",
+        "b",
+        30
+      ]
+    ]
+  },
+  "06-named": {
+    "columns": [
+      "name",
+      "balance"
+    ],
+    "rows": [
+      [
+        "Ben",
+        20
+      ],
+      [
+        "Ben",
+        25
+      ],
+      [
+        "Cy",
+        30
+      ]
+    ]
+  },
+  "06-inline": {
+    "columns": [
+      "name",
+      "balance",
+      "tier"
+    ],
+    "rows": [
+      [
+        "Ben",
+        20,
+        "gold"
+      ],
+      [
+        "Ben",
+        25,
+        "gold"
+      ],
+      [
+        "Cy",
+        30,
+        "silver"
+      ]
+    ]
+  },
+  "03-workbook": {
+    "sheets": {
+      "q1_report": {
+        "columns": [
+          "item_id",
+          "units"
+        ],
+        "rows": [
+          [
+            1,
+            10
+          ],
+          [
+            2,
+            20
+          ]
+        ]
+      },
+      "q2_report": {
+        "columns": [
+          "item_id",
+          "units"
+        ],
+        "rows": [
+          [
+            3,
+            30
+          ],
+          [
+            4,
+            40
+          ]
+        ]
+      }
+    }
+  },
+  "05-region": {
+    "columns": [
+      "region",
+      "total",
+      "smallest",
+      "largest",
+      "rows",
+      "present"
+    ],
+    "rows": [
+      [
+        "north",
+        30,
+        10,
+        20,
+        3,
+        2
+      ],
+      [
+        "south",
+        35,
+        5,
+        15,
+        3,
+        3
+      ]
+    ]
+  }
+}

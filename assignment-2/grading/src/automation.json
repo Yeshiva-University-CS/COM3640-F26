@@ -1,0 +1,338 @@
+{
+    "version":  1,
+    "maximum_score":  20,
+    "error_collection_policy":  {
+                                    "scored_only_in":  "flow08.ql",
+                                    "maximum_deduction":  "1/2",
+                                    "unobserved_checks_after_early_termination":  "blocked_pending_independent_test",
+                                    "validation_issue_checks":  "distinct_identifier_diagnostics_establish_passes; hidden_checks_remain_blocked"
+                                },
+    "output_directory":  "grading/output",
+    "expected_data":  "expected.json",
+    "comparison":  {
+                       "row_order":  "ignore",
+                       "duplicate_rows":  "preserve",
+                       "csv_excel_column_order":  "exact",
+                       "json_field_order":  "ignore",
+                       "strings":  "exact",
+                       "numbers":  {
+                                       "relative_tolerance":  1E-09,
+                                       "absolute_tolerance":  1E-09
+                                   }
+                   },
+    "flows":  [
+                  {
+                      "program":  "flow01.ql",
+                      "exit_code":  0,
+                      "checks":  [
+                                     {
+                                         "kind":  "table",
+                                         "id":  "01-original",
+                                         "file":  "01-original.csv",
+                                         "points":  "3/4"
+                                     },
+                                     {
+                                         "kind":  "table",
+                                         "id":  "01-subset",
+                                         "file":  "01-subset.csv",
+                                         "points":  "3/4"
+                                     },
+                                     {
+                                         "kind":  "table",
+                                         "id":  "01-headerless",
+                                         "file":  "01-headerless.csv",
+                                         "points":  "1/2"
+                                     }
+                                 ]
+                  },
+                  {
+                      "program":  "flow02.ql",
+                      "exit_code":  0,
+                      "checks":  [
+                                     {
+                                         "kind":  "table",
+                                         "id":  "02-json",
+                                         "file":  "02-json.json",
+                                         "points":  "1/2"
+                                     },
+                                     {
+                                         "kind":  "table",
+                                         "id":  "02-temporary",
+                                         "file":  "02-temporary.csv",
+                                         "points":  "3/4"
+                                     },
+                                     {
+                                         "kind":  "table",
+                                         "id":  "02-mapped",
+                                         "file":  "02-mapped.csv",
+                                         "points":  "3/4"
+                                     }
+                                 ]
+                  },
+                  {
+                      "program":  "flow03.ql",
+                      "exit_code":  0,
+                      "full_credit_requires":  {
+                                                   "file":  "03-workbook.xlsx",
+                                                   "exact_sheets":  [
+                                                                        "q1_report",
+                                                                        "q2_report"
+                                                                    ]
+                                               },
+                      "checks":  [
+                                     {
+                                         "kind":  "sheet",
+                                         "id":  "03-workbook",
+                                         "file":  "03-workbook.xlsx",
+                                         "sheet":  "q1_report",
+                                         "points":  "1"
+                                     },
+                                     {
+                                         "kind":  "sheet",
+                                         "id":  "03-workbook",
+                                         "file":  "03-workbook.xlsx",
+                                         "sheet":  "q2_report",
+                                         "points":  "1"
+                                     }
+                                 ]
+                  },
+                  {
+                      "program":  "flow04.ql",
+                      "exit_code":  0,
+                      "checks":  [
+                                     {
+                                         "kind":  "table",
+                                         "id":  "04-equal",
+                                         "file":  "04-equal.csv",
+                                         "points":  "1/6"
+                                     },
+                                     {
+                                         "kind":  "table",
+                                         "id":  "04-range",
+                                         "file":  "04-range.csv",
+                                         "points":  "1/6"
+                                     },
+                                     {
+                                         "kind":  "table",
+                                         "id":  "04-outside",
+                                         "file":  "04-outside.csv",
+                                         "points":  "1/6"
+                                     },
+                                     {
+                                         "kind":  "table",
+                                         "id":  "04-membership",
+                                         "file":  "04-membership.csv",
+                                         "points":  "1/2"
+                                     },
+                                     {
+                                         "kind":  "table",
+                                         "id":  "04-default",
+                                         "file":  "04-default.csv",
+                                         "points":  "1/2"
+                                     },
+                                     {
+                                         "kind":  "table",
+                                         "id":  "04-grouped",
+                                         "file":  "04-grouped.csv",
+                                         "points":  "1/2"
+                                     }
+                                 ]
+                  },
+                  {
+                      "program":  "flow05.ql",
+                      "exit_code":  0,
+                      "full_credit_requires":  {
+                                                   "file":  "05-region.csv",
+                                                   "columns":  [
+                                                                   "region",
+                                                                   "total",
+                                                                   "smallest",
+                                                                   "largest",
+                                                                   "rows",
+                                                                   "present"
+                                                               ]
+                                               },
+                      "checks":  [
+                                     {
+                                         "kind":  "projection",
+                                         "id":  "05-region",
+                                         "file":  "05-region.csv",
+                                         "columns":  [
+                                                         "region",
+                                                         "total"
+                                                     ],
+                                         "points":  "1/3"
+                                     },
+                                     {
+                                         "kind":  "projection",
+                                         "id":  "05-region",
+                                         "file":  "05-region.csv",
+                                         "columns":  [
+                                                         "region",
+                                                         "smallest"
+                                                     ],
+                                         "points":  "1/3"
+                                     },
+                                     {
+                                         "kind":  "projection",
+                                         "id":  "05-region",
+                                         "file":  "05-region.csv",
+                                         "columns":  [
+                                                         "region",
+                                                         "largest"
+                                                     ],
+                                         "points":  "1/3"
+                                     },
+                                     {
+                                         "kind":  "projection",
+                                         "id":  "05-region",
+                                         "file":  "05-region.csv",
+                                         "columns":  [
+                                                         "region",
+                                                         "rows"
+                                                     ],
+                                         "points":  "1/4"
+                                     },
+                                     {
+                                         "kind":  "projection",
+                                         "id":  "05-region",
+                                         "file":  "05-region.csv",
+                                         "columns":  [
+                                                         "region",
+                                                         "present"
+                                                     ],
+                                         "points":  "1/4"
+                                     },
+                                     {
+                                         "kind":  "table",
+                                         "id":  "05-category",
+                                         "file":  "05-category.csv",
+                                         "points":  "1/2"
+                                     }
+                                 ]
+                  },
+                  {
+                      "program":  "flow06.ql",
+                      "exit_code":  0,
+                      "checks":  [
+                                     {
+                                         "kind":  "table",
+                                         "id":  "06-named",
+                                         "file":  "06-named.csv",
+                                         "points":  "1"
+                                     },
+                                     {
+                                         "kind":  "table",
+                                         "id":  "06-inline",
+                                         "file":  "06-inline.csv",
+                                         "points":  "1"
+                                     }
+                                 ]
+                  },
+                  {
+                      "program":  "flow07.ql",
+                      "exit_code":  1,
+                      "no_output_files":  true,
+                      "checks":  [
+                                     {
+                                         "kind":  "parse_rejection",
+                                         "points":  "1"
+                                     },
+                                     {
+                                         "kind":  "driver_error",
+                                         "exception":  "GrammarError",
+                                         "exit_code":  1,
+                                         "no_output_files":  true,
+                                         "points":  "1"
+                                     }
+                                 ]
+                  },
+                  {
+                      "program":  "flow08.ql",
+                      "exit_code":  1,
+                      "no_output_files":  true,
+                      "checks":  [
+                                     {
+                                         "kind":  "validation_issue",
+                                         "exception":  "StructuralError",
+                                         "identifier":  "missing_customers",
+                                         "points":  "1/2"
+                                     },
+                                     {
+                                         "kind":  "validation_issue",
+                                         "exception":  "StructuralError",
+                                         "identifier":  "missing_orders",
+                                         "points":  "1/2"
+                                     },
+                                     {
+                                         "kind":  "validation_issue",
+                                         "exception":  "StructuralError",
+                                         "identifier":  "missing_products",
+                                         "points":  "1/2"
+                                     },
+                                     {
+                                         "kind":  "validation_exact",
+                                         "exception":  "StructuralError",
+                                         "count":  3,
+                                         "exit_code":  1,
+                                         "no_output_files":  true,
+                                         "points":  "1/2"
+                                     }
+                                 ]
+                  },
+                  {
+                      "program":  "flow09.ql",
+                      "exit_code":  1,
+                      "no_output_files":  true,
+                      "checks":  [
+                                     {
+                                         "kind":  "validation_issue",
+                                         "exception":  "SchemaError",
+                                         "identifier":  "missing_field",
+                                         "points":  "1/2"
+                                     },
+                                     {
+                                         "kind":  "validation_issue",
+                                         "exception":  "SchemaError",
+                                         "identifier":  "joined",
+                                         "points":  "1/2"
+                                     },
+                                     {
+                                         "kind":  "validation_issue",
+                                         "exception":  "SchemaError",
+                                         "identifier":  "name",
+                                         "points":  "1/2"
+                                     },
+                                     {
+                                         "kind":  "validation_rejection",
+                                         "exception":  "SchemaError",
+                                         "minimum":  1,
+                                         "only_expected_type":  true,
+                                         "exit_code":  1,
+                                         "no_output_files":  true,
+                                         "points":  "1/2"
+                                     }
+                                 ]
+                  },
+                  {
+                      "program":  "flow10.ql",
+                      "exit_code":  1,
+                      "no_output_files":  true,
+                      "checks":  [
+                                     {
+                                         "kind":  "validation_success",
+                                         "points":  "1"
+                                     },
+                                     {
+                                         "kind":  "execution_error",
+                                         "exception":  "ExecutionError",
+                                         "cause":  "PipelineRuntimeError",
+                                         "exit_code":  1,
+                                         "no_output_files":  true,
+                                         "points":  "1"
+                                     }
+                                 ]
+                  }
+              ],
+    "program_directory":  "grading/ql"
+}

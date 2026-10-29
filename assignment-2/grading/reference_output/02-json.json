@@ -1,0 +1,17 @@
+[
+  {
+    "account_id": 1,
+    "balance": 10.5,
+    "status": "open"
+  },
+  {
+    "account_id": 2,
+    "balance": null,
+    "status": "closed"
+  },
+  {
+    "account_id": 3,
+    "balance": -2.5,
+    "status": "open"
+  }
+]
