@@ -1,0 +1,10 @@
+not-a-bmp.txt 3
+tiny.bmp 3
+zero-width.bmp 3
+bad-offset.bmp 3
+core-header.bmp 4
+rle8.bmp 4
+bpp7.bmp 4
+bitfields24.bmp 4
+truncated.bmp 5
+huge.bmp 5
